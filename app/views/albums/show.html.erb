@@ -1,4 +1,12 @@
 <h1><%= @album.name %></h1>
+<label for="album_artist">Album Artist</label>
+<p id="album_artist">
+  <%= @album.band.name %>
+</p>
+<label for="album_type">Album Type</label>
+<p id="album_type">
+  <%= @album.studio ? "Studio Album" : "Live Recording" %>
+</p>
 <hr>
 <h2><%= @album.name %>'s tracks</h2>
 <ul>
