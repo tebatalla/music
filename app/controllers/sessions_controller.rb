@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       params[:user][:password])
     unless @user.nil?
       log_in_user!(@user)
-      redirect_to user_url(@user)
+      redirect_to bands_url
     else
       flash.now[:errors] = ["Not a valid username/password combination"]
       @user = User.new(email: params[:user][:email])
