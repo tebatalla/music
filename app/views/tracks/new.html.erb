@@ -1,0 +1,5 @@
+<h1>Add a track</h1>
+
+<%= render "layouts/errors" if flash.now[:errors] %>
+
+<%= render "form", url: tracks_url, track: @track %>

@@ -1,0 +1,19 @@
+<h1><%= @track.name %></h1>
+<div>
+  <label for="track_type">Track Type</label>
+  <p id="track_type">
+    <%= @track.bonus ? "Bonus" : "Regular" %>
+  </p>
+  <label for="track_lyrics">Lyrics</label>
+  <p id=track_lyrics>
+    <%= @track.lyrics %>
+  </p>
+</div>
+<hr>
+<%= link_to "Edit this track", edit_track_url(@track) %> <%= link_to "Back to #{@track.album.name}", album_url(@track.album) %>
+<br>
+<br>
+<%= button_to "Destroy this track",
+  track_url(@track),
+  method: :delete,
+  data: {confirm: "Are you sure you want to delete #{@track.name}?"} %>

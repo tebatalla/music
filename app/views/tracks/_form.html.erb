@@ -1,0 +1,27 @@
+<form action="<%= url %>" method="post">
+  <% unless url == tracks_url %>
+  <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <%= csrf_token %>
+  <label>Track name
+    <input type="text" name="track[name]" value="<%= track.name %>">
+  </label>
+  <br>
+  <label>Album
+    <select name="track[album_id]">
+      <% Album.all.each do |album| %>
+      <option
+        <%= "selected" if album.id == params[:album_id] || album.id == track.album_id %>
+        value="<%= album.id %>"><%= album.name %>
+      </option>
+      <% end %>
+    </select>
+  </label>
+  <br>
+  <label><input type="radio" name="track[bonus]" value="f" <%= "checked" if track.bonus === false %>>Regular</label>
+  <label><input type="radio" name="track[bonus]" value="t" <%= "checked" if track.bonus === true %>>Bonus</label>
+  <br>
+  <label for="lyrics">Lyrics</label><textarea name="track[lyrics]" id="lyrics"><%= track.lyrics %></textarea>
+
+  <input type="submit" name="Submit">
+</form>
