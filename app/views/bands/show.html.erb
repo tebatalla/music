@@ -5,8 +5,8 @@
   <% @band.albums.each do |album| %>
   <li> <%= link_to album.name, album_url(album) %> </li>
   <% end %>
-  <%= link_to "Add an album", new_band_album_url(@band) %>
 </ul>
+<%= link_to "Add an album", new_band_album_url(@band) %>
 <hr>
 <%= link_to "Edit this band", edit_band_url(@band) %> <%= link_to "Back to list of bands", bands_url %>
 <br>
