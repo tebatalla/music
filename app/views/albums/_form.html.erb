@@ -18,8 +18,8 @@
     </select>
   </label>
   <br>
-  <label><input type="radio" name="album[studio]" value="<%= true %>">Studio</label>
-  <label><input type="radio" name="album[studio]" value="<%= false %>">Live</label>
+  <label><input type="radio" name="album[studio]" value="t" <%= "checked" if album.studio === true %>>Studio</label>
+  <label><input type="radio" name="album[studio]" value="f" <%= "checked" if album.studio === false %>>Live</label>
 
   <input type="submit" name="Submit">
 </form>

@@ -11,7 +11,8 @@
 #
 
 class Album < ActiveRecord::Base
-  validates :name, :studio, :band_id, presence: true
+  validates :name, :band_id, presence: true
+  validates :studio, inclusion: { in: [true, false]}
 
   belongs_to :band
 

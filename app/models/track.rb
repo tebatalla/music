@@ -12,7 +12,8 @@
 #
 
 class Track < ActiveRecord::Base
-  validates :name, :album_id, :bonus, presence: true
+  validates :name, :album_id, presence: true
+  validates :bonus, inclusion: { in: [true, false]}
 
   belongs_to :album
 
