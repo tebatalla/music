@@ -3,7 +3,7 @@ class BandsController < ApplicationController
 
   def index
     @bands = Band.all
-    render :new
+    render :index
   end
 
   def edit
@@ -17,7 +17,7 @@ class BandsController < ApplicationController
   end
 
   def create
-    @band = Band.new(name: band_params[:band][:name])
+    @band = Band.new(band_params)
     if @band.save
       redirect_to band_url(@band)
     else

@@ -12,7 +12,7 @@ class TracksController < ApplicationController
   end
 
   def create
-    @track = Track.new(name: track_params[:track][:name])
+    @track = Track.new(track_params)
     if @track.save
       redirect_to track_url(@track)
     else
