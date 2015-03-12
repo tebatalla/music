@@ -1,2 +1,5 @@
 <h1>Edit <%= @album.name %></h1>
+
+<%= render "layouts/errors" if flash.now[:errors] %>
+
 <%= render "form", url: album_url(@album), album: @album %>
