@@ -1,0 +1,17 @@
+<h1><%= @band.name %></h1>
+<hr>
+<h2><%= @band.name %>'s albums</h2>
+<ul>
+  <% @band.albums.each do |album| %>
+  <li> <%= link_to album.name, album_url(album) %> </li>
+  <% end %>
+  <%= link_to "Add an album", new_band_album_url(@band) %>
+</ul>
+<hr>
+<%= link_to "Edit this band", edit_band_url(@band) %> <%= link_to "Back to list of bands", bands_url %>
+<br>
+<br>
+<%= button_to "Destroy this band",
+  band_url(@band),
+  method: :delete,
+  data: {confirm: "Are you sure you want to delete #{@band.name}?"} %>
