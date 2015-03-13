@@ -10,6 +10,9 @@
   </p>
 </div>
 <hr>
+<%= render "notes/note", track: @track %>
+<%= render "notes/form", track: @track %>
+<hr>
 <%= link_to "Edit this track", edit_track_url(@track) %> <%= link_to "Back to #{@track.album.name}", album_url(@track.album) %>
 <br>
 <br>
